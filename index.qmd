@@ -1,0 +1,211 @@
+---
+title: "Win Ratio References"
+author: 
+  - name: "Tuo Wang (tuo.wang@lilly.com)"
+date: last-modified
+categories: [2023, composite endpoints, recurrent events, cardiovascular, heart failure]
+description: "This is a summary of publications for win ratio"
+format: 
+  html:
+    search: true
+    self-contained: true
+    anchor-sections: true
+    mainfont: Source Sans Pro
+    theme: journal
+    code-tools: true
+    code-fold: true
+    code-link: false
+    fig-width: 8
+    fig-height: 4
+    code-block-bg: "#f1f3f5"
+    code-block-border-left: "#31BAE9"
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    captions: true
+    cap-location: margin
+    table-captions: true
+    tbl-cap-location: margin
+    reference-location: margin
+---
+
+
+# Introduction
+
+Win ratio is a novel approach to analyze prioritized composite endpoints. After proposed by [Pocock et al. (2012)](https://academic.oup.com/eurheartj/article/33/2/176/439013), it gained much attention in both academia and industry. I summarized some important references regarding win ratio statistics. Feel free to reach out to me if you have any questions.
+
+# Win Ratio papers
+
+```{mermaid}
+%%| column: page
+%%| fig-width: 13
+flowchart TD
+WR[Win Ratio] --> Inf[Inferences]
+WR --> Exten[Extensions]
+WR --> Censoring[Dependency on censoring]
+WR --> Tie[Handling of Ties]
+WR --> Design[Sample size]
+WR --> Review[Review]
+
+Inf ---> infpaper[Luo, 2015 <br> Dong, 2016]
+Exten ---> extenpaper[Weighted: Luo, 2017a <br> Stratified: Luo, 2017b <br> Regression: Mao and Wang, 2021]
+Censoring ---> cenpaper[Oakes, 2016 <br> IPCW: Dong, 2020]
+Tie ---> tiepaper[Win odds: Dong, 2019]
+Design ---> designpaper[Mao, 2021 <br> Yu and Ganju, 2022]
+Review ---> reviewpaper[Gregson, 2023]
+```
+
+## Theory
+
+**Background:**
+
+- [Combining mortality and longitudinal measures in clinical trials.](https://onlinelibrary.wiley.com/doi/abs/10.1002/%28SICI%291097-0258%2819990615%2918%3A11%3C1341%3A%3AAID-SIM129%3E3.0.CO%3B2-7), Finkelstein and Schoenfeld (1999)
+
+- [Generalized pairwise comparisons of prioritized outcomes in the two-sample problem.](https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.3923), Buyse (2010)
+
+- [The win ratio: a new approach to the analysis of composite endpoints in clinical trials based on clinical priorities](https://academic.oup.com/eurheartj/article/33/2/176/439013), Pocock et al. (2012)
+
+**Inference for win ratio:** 
+
+- [Large sample inference for a win ratio analysis of a composite outcome based on prioritized components](https://academic.oup.com/biostatistics/article/17/1/178/1744479), Bebu and Lachin (2015)
+
+- [An alternative approach to confidence interval estimation for the win ratio statistic](https://onlinelibrary.wiley.com/doi/full/10.1111/biom.12225), Luo et al. (2015)
+
+- [A generalized analytic solution to the win ratio to analyze a composite endpoint considering the clinical importance order among components](https://onlinelibrary.wiley.com/doi/full/10.1002/pst.1763?casa_token=7OaTK3AD2W4AAAAA%3AAJDGGnu-lzjcqN00i1dMqqbwR5ae-7oOXP1P9lswjjlyS2nw64-mRgLMYHthn34oHjaf6A604n-VI2c), Dong (2016)
+
+- [On the alternative hypotheses for the win ratio](https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.12954), Mao (2019) 
+
+- [Evaluation of inferential methods for the net benefit and win ratio statistics](https://www.tandfonline.com/doi/abs/10.1080/10543406.2020.1730873), Verbeeck (2019)
+
+- [The asymptotic distribution of the Net Benefit estimator in presence of right-censoring](https://journals.sagepub.com/doi/full/10.1177/09622802211037067?casa_token=kaVqsz-TshQAAAAA%3AvxrzjkiQxqKIl3f7_tPmfZSAz_1hvKLVtSdXneXl1KcxohOPrYnVFwXjGSN8TsiRk0S8Pw-dfLmThQ4), Ozenne (2021)
+
+- [Inference on win ratio for cluster-randomized semi-competing risk data](https://link.springer.com/article/10.1007/s42081-021-00131-1), Zhang and Jeong (2021)
+
+
+**Weighted win ratio:**
+
+- [Weighted win loss approach for analyzing prioritized outcomes](https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.7284), Luo et al. (2017a)
+
+- [Some Meaningful Weighted Log-Rank and Weighted Win Loss Statistics](https://link.springer.com/article/10.1007/s12561-020-09273-4), Luo and Quan (2020)
+
+**Stratified win ratio:** 
+
+- [The stratified win ratio](https://www.tandfonline.com/doi/abs/10.1080/10543406.2017.1397007?journalCode=lbps20#:~:text=Consider%20a%20clinical%20trial%20with,2%2C%20%E2%80%A6%2C%20M), Dong et al. (2017b)
+
+- [Adjusted win ratio with stratification: Calculation methods and interpretation](https://journals.sagepub.com/doi/full/10.1177/0962280220942558?casa_token=JyQzTdPebh8AAAAA%3Akpqsz0vsFcFmiiStB-D-5zbN3CqA3F0GCh-dVk5Wbh5oQF1nfUqRfSDrJxf409MzzXt5MKWP6gDx2gE), Gasparyan et al. (2020)
+
+**Dependency on follow-up time:**
+
+- [On the win-ratio statistic in clinical trials with multiple types of event](https://academic.oup.com/biomet/article-abstract/103/3/742/1743978?redirectedFrom=fulltext), Oakes (2016)
+
+- [Graphing the win ratio and its components over time](https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.7895), Finkelstein and Schoenfeld (2019)
+
+- [The win ratio: Impact of censoring and follow‐up time and use with nonproportional hazards](https://onlinelibrary.wiley.com/doi/full/10.1002/pst.1977?casa_token=FoLNO8bdSwkAAAAA%3Ahrpi3ENz_dkOXGHpKUKHJiOgP4ePBDgf04_rssrCMtHE9PJw6H-QGGieJxzAPQdH3vCpqoyUUaCZ_aY), Dong et al. (2020)
+
+- [Adjusting win statistics for dependent censoring](https://onlinelibrary.wiley.com/doi/abs/10.1002/pst.2086), Dong et al. (2020)
+
+- [The inverse-probability-of-censoring weighting (IPCW) adjusted win ratio statistic: an unbiased estimator in the presence of independent censoring](https://www.tandfonline.com/doi/abs/10.1080/10543406.2020.1757692), Dong et al. (2020)
+
+
+**Handling of Ties (Win Odds):** 
+
+- [The Win Ratio: On Interpretation and Handling of Ties](https://www.tandfonline.com/doi/abs/10.1080/19466315.2019.1575279?journalCode=usbr20), Dong (2019)
+
+- [The use of the win odds in the design of non-inferiority clinical trials](https://www.tandfonline.com/doi/abs/10.1080/10543406.2020.1757690), Peng (2019)
+
+- [Win odds: An adaptation of the win ratio to include ties](https://onlinelibrary.wiley.com/doi/full/10.1002/sim.8967?casa_token=aZWSuQx0R-sAAAAA%3A7pSCiZkAZVs2AaHpxSNLXi2k2E2Hcjkw6s2j63DnJCWvnwKQ08nBulZCeLfaD2gUF1RQb4Iscsk4-Q8), Brunner (2021)
+
+- [Win statistics (win ratio, win odds, and net benefit) can complement one another to show the strength of the treatment effect on time-to-event outcomes](https://onlinelibrary.wiley.com/doi/abs/10.1002/pst.2251), Dong (2022)
+
+- [The win odds: statistical inference and regression](https://www.tandfonline.com/doi/abs/10.1080/10543406.2022.2089156), Song (2022)
+
+**Event-specific win ratio:**
+
+- [Event-specific win ratios for inference with terminal and non-terminal events](https://onlinelibrary.wiley.com/doi/10.1002/sim.9266), Yang (2021)
+
+**Sample size calculation:** 
+
+- [Sample size formula for general win ratio analysis](https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.13501), Mao (2021)
+
+- [Sample size formula for a win ratio endpoint](https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.9297), Yu and Ganju (2022)
+
+**Recurrent events:**
+
+- [On recurrent-event win ratio](https://journals.sagepub.com/doi/abs/10.1177/09622802221084134), Mao (2022)
+
+- [Win-loss parameters for right-censored event data, with application to recurrent events](https://onlinelibrary.wiley.com/doi/full/10.1002/sim.9937), Parner and Overgaard (2023)
+
+**Regression:** 
+
+- [A class of proportional win-fractions regression models for composite outcomes](https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.13382), Mao and Wang (2020)
+
+- [Stratified Proportional Win-fractions Regression Analysis](https://onlinelibrary.wiley.com/doi/10.1002/sim.9570), Wang and Mao (2022)
+
+**Other:**
+
+- [Adjusted win ratio using the inverse probability of treatment weighting](https://www.tandfonline.com/doi/full/10.1080/10543406.2023.2275759?casa_token=W1pyDfOZmFoAAAAA%3AKd0uZnQxDzPBp-kjWk1iPFlwXoe_oR795FmCjG43jaJoRY-87POXJV1xKy3I6IxkvPZc_nQk1mc) Wang et al. (2023)
+
+- [Development and Validation of a New Hierarchical Composite End Point for Clinical Trials of Kidney Disease Progression](https://journals.lww.com/jasn/fulltext/2023/12000/development_and_validation_of_a_new_hierarchical.15.aspx), Hiddo (2023) 
+
+- [The maraca plot: A novel visualization of hierarchical composite endpoints](https://journals.sagepub.com/doi/10.1177/17407745221134949?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed), Karpefors (2022) 
+
+**Review:**
+
+- [Statistical Models for Composite Endpoints of Death and Nonfatal Events: A Review](https://www.tandfonline.com/doi/abs/10.1080/19466315.2021.1927824), Mao and Kim (2021)
+
+- [Statistical methods for composite endpoints](https://eurointervention.pcronline.com/article/the-a-b-c-of-multiple-statistical-methods-for-composite-endpoints), Hara et al. (2021)
+
+- [Recurrent Events in Cardiovascular Trials: JACC State-of-the-Art Review](https://www.jacc.org/doi/full/10.1016/j.jacc.2023.07.024), Gregson et al. (2023)
+
+# Software
+
+- Win ratio regression R package [`WR`](https://cran.r-project.org/web/packages/WR/index.html)
+
+- R package [`WINS`](https://cran.uni-muenster.de/web/packages/WINS/vignettes/vignette.pdf), [tutorial](https://cran.uni-muenster.de/web/packages/WINS/vignettes/vignette.pdf)
+
+- Weighted win ratio R package: [`WWR`](https://cran.r-project.org/web/packages/WWR/WWR.pdf), [paper](https://www.hoajonline.com/medicalstat/2053-7662/5/4)
+
+- R package for computing confidence interval based on Bebu and Lachin (2016) [`WinRatio`](https://cran.r-project.org/web/packages/WinRatio/WinRatio.pdf)
+
+- R code for computing confidence interval based on Luo et al. (2015): [R code](https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2Fbiom.12225&file=biom12225-sup-0001-SupData-S1.pdf)
+
+- Supplemental material for Redfors, Björn, et al. "The win ratio approach for composite endpoints: practical guidance based on previous experience." [R code](https://github.com/CRF-Biostatistics/WinRatioApplications)
+
+- Stata module to calculate the unmatched Win Ratio for prioritized outcomes, [Code](https://econpapers.repec.org/software/bocbocode/s458984.htm)
+
+- SAS example, [Code](https://www.lexjansen.com/phuse/2019/as/AS11.pdf)
+
+# Applications
+
+Studies in `clinicaltrial.gov` using "win ratio" as either primary or secondary endpoints.
+
+```{r}
+#| column: page
+#| echo: false
+#| warning: false
+
+library(DT)
+library(readr)
+
+df <- read_csv("./ctg-studies.csv")
+# 
+# Trial <- c("EMPA-AHF")
+# Population <- c("123")
+# Treatment <- c("Empagliflozin vs. placebo")
+# Endpoint <- c("Death > Hospit > 6min")
+# Duration <- c("Sep 2022 - Apr 2023")
+# 
+# df <- data.frame(
+#   Trial,
+#   Population,
+#   Treatment,
+#   Endpoint,
+#   Duration
+# )
+
+datatable(df[,1:6])
+```
+
+
+
+
